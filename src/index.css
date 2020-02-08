@@ -1,13 +1,114 @@
+html {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	padding: 0px !important;
+	margin: 0px !important;
+	height: 100vh;
+	width: 100vw;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.hk-logo {
+	width: 50px;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}
+
+.layout {
+	display: flex;
+	flex: 1;
+	align-items: stretch;
+}
+.newsList {
+	flex: 1;
+	position: relative;
+}
+
+.stories-container {
+	height: 100%;
+	overflow: auto;
+	flex: 1;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.news-list-item {
+	padding-right: 30px !important;
+}
+.news-list-item .open-new-window {
+	display: none;
+}
+.news-list-item:hover .open-new-window {
+	display: block;
+	position: absolute;
+	right: 0;
+	padding: 5px;
+}
+.news-list-item-url {
+	text-overflow: ellipsis;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+}
+.preview {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	position: relative;
+}
+
+.preview iframe {
+	align-content: stretch;
+	flex: 1;
+	width: 100%;
+}
+
+@media only screen and (max-width: 650px) {
+	.preview {
+		display: none;
+	}
+}
+@media only screen and (max-width: 1000px) {
+	.preview {
+		flex: 1;
+	}
+}
+.loading-info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.news-list-loader {
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
 }
