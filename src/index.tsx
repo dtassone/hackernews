@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 
-import configureAppStore from "./redux/store";
+import configureAppStore from "app/redux/store";
 import * as serviceWorker from './serviceWorker';
 import {App} from './app/main'
 import './newsList.less';

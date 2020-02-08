@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NewsListContainer } from './newsList/newsList';
 import AppHeader from './header';
-import { PreviewStory } from './previewStory';
+import { PreviewStory } from './previewPanel/previewStory';
 import { ThemeProvider, CssBaseline } from '@material-ui/core';
 import { theme } from '../theme';
 
