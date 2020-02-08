@@ -1,8 +1,8 @@
 
 
 import { Action } from "redux";
-import { newStoriesLoaded, previewStory, newStoryIdsLoaded } from "../app/newsList/newsListAction";
-import { Story } from "../app/model/story";
+import { newStoriesLoaded, previewStory, newStoryIdsLoaded } from "../newsList/newsListAction";
+import { Story } from "../model/story";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 export interface NewsState {

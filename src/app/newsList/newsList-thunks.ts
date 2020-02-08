@@ -1,6 +1,6 @@
 import { Action, Dispatch, AnyAction } from 'redux'
 import { ThunkAction, ThunkDispatch, } from 'redux-thunk'
-import { AppState } from '../../reducers';
+import { AppState } from '../reducers';
 import { Story } from '../model/story';
 import { newStoriesLoaded, newStoryIdsLoaded, previewStory } from './newsListAction';
 

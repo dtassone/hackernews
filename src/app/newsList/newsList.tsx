@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import {loadNews} from "./newsListAction";
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { AppState } from '../../reducers';
+import { AppState } from '../reducers';
 import { loadNewStoryIds, loadStoriesItems } from './newsList-thunks';
 import { NewsListItem } from './newsListItem';
 import { Story } from '../model/story';
