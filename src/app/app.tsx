@@ -1,5 +1,4 @@
-import './styles/index.css';
-import './styles/newsList.less';
+import './styles/app.less';
 
 import * as React from 'react';
 import { NewsListContainer } from './newsList/components/newsList';
