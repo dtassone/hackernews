@@ -7,17 +7,19 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+// const useStyles = makeStyles(theme => ({
+//     appHeader: {
+//      paddingRight:'15px'
+//     },
+//   }));
+
 export default function Header() {
-
-  return (
-      <AppBar position="static" className='app-header' >
-        <Toolbar>
-				<img src='./hk.png' className="hk-logo" />
-
-          <Typography variant="h6">
-            Hacker News Reader
-          </Typography>
-        </Toolbar>
-      </AppBar>
-  );
+	return (
+		<AppBar position="static" className="app-header">
+			<Toolbar>
+				<img src="./hk.png" className="hk-logo" />
+				<Typography variant="h6">Hacker News Reader</Typography>
+			</Toolbar>
+		</AppBar>
+	);
 }
