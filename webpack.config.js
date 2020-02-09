@@ -5,11 +5,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
 	context: __dirname,
 	mode: 'development',
-	entry: [
-		'webpack-dev-server/client?http://localhost:8080',
-		'./src/index.tsx' 
-	],
-	devtool: 'inline-source-map',
+	entry: [ 'webpack-dev-server/client?http://localhost:8080', './src/index.tsx' ],
+	devtool: 'eval-source-map',
+	optimization: {
+		usedExports: true
+	},
 	module: {
 		rules: [
 			{
@@ -19,27 +19,23 @@ module.exports = {
 			},
 			{
 				test: /\.less|\.css$/,
-                use: [ 
-                    'style-loader',
-                    'css-loader', 
-                    'less-loader'
-                ],
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
-                exclude: /node_modules/,
-                use: ['file-loader?name=[name].[ext]']
-              }
+				use: [ 'style-loader', 'css-loader', 'less-loader' ]
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+				exclude: /node_modules/,
+				use: [ 'file-loader?name=[name].[ext]' ]
+			}
 		]
 	},
 	resolve: {
 		extensions: [ '.tsx', '.ts', '.js' ]
-    },
-    devServer: {
+	},
+	devServer: {
 		// hot:true,
-        contentBase: ['./dist', './public'],
-        compress: true,
-        port: 3000
+		contentBase: [ './dist', './public' ],
+		compress: true,
+		port: 3000
 	},
 	plugins: [
 		// new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin

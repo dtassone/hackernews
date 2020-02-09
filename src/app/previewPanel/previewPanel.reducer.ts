@@ -1,17 +1,13 @@
-import { Action } from "redux";
-import { previewStory } from "./previewPanel.action";
-import { Story } from "../model/story";
+import { previewStory, PreviewPanelActions } from './previewPanel.actions';
+import { Story } from '../model/story';
+import { Reducer } from 'redux';
+import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 
 export interface PreviewPanelState {
-    story: Story | null;
+  story: Story | null;
 }
-const INITIAL_STATE = { story: null };
+export const PREVIEW_INITIAL_STATE: PreviewPanelState = { story: null };
 
-export const previewPanelReducer = (state: PreviewPanelState = INITIAL_STATE, action: any) => {
-    switch (action.type) {
-        case previewStory.type:
-            return { ...state, story: action.payload }
-        default:
-            return state
-    }
-}
+export const previewPanelReducer: Reducer<PreviewPanelState, PreviewPanelActions> = createReducer(PREVIEW_INITIAL_STATE, {
+  [previewStory.type]: (state: PreviewPanelState, action: PayloadAction<Story>) => ({ ...state, story: action.payload }),
+});

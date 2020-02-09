@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export const PreviewPanel: React.FC<{}> = (props) => <div className="preview">{props.children}</div>;
+export const PreviewPanel: React.FC<{}> = props => <div className="preview">{props.children}</div>;

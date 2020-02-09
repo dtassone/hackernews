@@ -1,30 +1,27 @@
-import { Action } from "redux";
-import { newStoriesLoaded, previewStory, newStoryIdsLoaded } from "./newsList.action";
-import { Story } from "../model/story";
-import { PayloadAction } from "@reduxjs/toolkit";
+import { newStoriesLoaded, newStoryIdsLoaded, NewsListActions } from './newsList.actions';
+import { Story } from '../model/story';
+import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+import { Reducer } from 'redux';
 
+export type NullableStories = (Story | null)[];
 export interface NewsState {
-    stories: Story[];
-    preview?: Story;
-    storyIds: number[];
-    lastStoryLoadedIndex: number;
+  stories: NullableStories;
+  preview?: Story;
+  storyIds: number[];
+  nextStoryToLoadIndex: number;
 }
 
-const INITIAL_STATE = { stories: [], storyIds: [], lastStoryLoadedIndex: 0 };
+export const NEWS_INITIAL_STATE: NewsState = { stories: [], storyIds: [], nextStoryToLoadIndex: 0 };
 
-export const newsReducer = (state: NewsState = INITIAL_STATE, action: any) => {
-    switch (action.type) {
-        case newStoriesLoaded.type:
-            return { 
-                ...state, 
-                stories: [...state.stories, ...action.payload], 
-                lastStoryLoadedIndex: (state.lastStoryLoadedIndex + action.payload.length)
-            };
-        case newStoryIdsLoaded.type:
-            return { ...state, storyIds: action.payload };
-        case previewStory.type:
-            return { ...state, preview: action.payload }
-        default:
-            return state
-    }
-}
+export const newsListReducer: Reducer<NewsState, NewsListActions> = createReducer(NEWS_INITIAL_STATE, {
+  [newStoriesLoaded.type]: (state, action: PayloadAction<Story[]>) => {
+    return {
+      ...state,
+      stories: [...state.stories, ...action.payload],
+      nextStoryToLoadIndex: state.nextStoryToLoadIndex + action.payload.length,
+    };
+  },
+  [newStoryIdsLoaded.type]: (state, action: PayloadAction<number[]>) => {
+    return { ...state, storyIds: action.payload as number[] };
+  },
+});

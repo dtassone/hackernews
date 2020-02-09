@@ -37,7 +37,7 @@ code {
 	flex-direction: column;
 }
 
-.layout {
+.main-container {
 	display: flex;
 	flex: 1;
 	align-items: stretch;
@@ -48,11 +48,10 @@ code {
 	position: relative;
 
 	.stories-container {
-		height: 100%;
 		overflow: auto;
 		flex: 1;
 		position: absolute;
-		top: 0;
+		top: 55px;
 		bottom: 0;
 		left: 0;
 		right: 0;
@@ -90,6 +89,7 @@ code {
 	flex-direction: column;
 	overflow: auto;
 	position: relative;
+	border-left: 1px solid #ccc;
 
 	iframe {
 		align-content: stretch;
@@ -112,4 +112,7 @@ code {
 	.preview {
 		flex: 1;
 	}
+}
+.header-title-container {
+	padding-left: 0px;
 }
