@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { rootReducer } from '../reducers/root.reducer';
+import { rootReducer } from './root.reducer';
 
 export default function configureAppStore() {
 	const store = configureStore({
