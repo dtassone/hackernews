@@ -1,10 +1,11 @@
 # Welcome to the HackerNews Reader
 
-The app is pointing at `https://hacker-news.firebaseio.com/v0/newstories.json` <br />
+The app endpoint is `https://hacker-news.firebaseio.com/v0/newstories.json` <br />
 Maximum story loaded is 500. <br />
-I have wrote only a small number of tests for the NewsList reducer and thunk, I was planning to add tests for components using enzyme but I didn't get the time.
+I have wrote only a small number of tests for the NewsList reducer and thunk, I should add tests for components using enzyme.
 
-The search box is filtering only the loaded stories. And I'm using a regexp to search in the story array. however I did not escape the input value and if you type any special char, you will see a "nice" error handling.
+The search box is filtering only the loaded stories. And I'm using a regexp to search in the story array.  
+FYI I did not escape the input value and if you type any special char, you will see a "nice" error handling.
 
 You can also cut your connection to see how it is handled.
 
