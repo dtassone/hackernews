@@ -38,8 +38,6 @@ export const loadStoriesItems = () => {
       const maxIndex = storyIds.length > PAGE_SIZE ? PAGE_SIZE : storyIds.length;
 
       const storiesPromises: Promise<Story | null>[] = [...storyIds].splice(nextStoryIndex, maxIndex).map(async (id: number) => {
-        console.log('building all promises');
-
         return fetch(ITEM_URL.replace('{itemId}', id.toString()))
           .then(response => response.json())
           .catch(() => null); //we ignore stories that fail to load
@@ -47,13 +45,11 @@ export const loadStoriesItems = () => {
 
       try {
         const stories = await Promise.all(storiesPromises);
-        // .then((stories: NullableStories) => {
-        console.log('Resolving all promises', stories);
+
         if (nextStoryIndex === 0) {
           dispatch(previewStory(stories.filter(s => s !== null)[0] as Story));
         }
         dispatch(newStoriesLoaded(stories));
-        // })
       } catch (err) {
         const message = `Error loading stories - ${err && err.message}`;
         console.error(message);
