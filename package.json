@@ -13,7 +13,7 @@
 		"react-infinite-scroller": "^1.2.4",
 		"react-redux": "^7.1.3",
 		"redux": "^4.0.5",
-		"style-loader": "^1.1.3"
+		"style-loader": "^1.3.0"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
@@ -33,7 +33,7 @@
 		"@typescript-eslint/eslint-plugin": "^2.19.0",
 		"@typescript-eslint/parser": "^2.19.0",
 		"clean-webpack-plugin": "^3.0.0",
-		"css-loader": "^3.4.2",
+		"css-loader": "^6.7.3",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.2",
 		"eslint": "^6.8.0",
@@ -43,19 +43,19 @@
 		"eslint-plugin-unused-imports": "^0.1.2",
 		"fetch-mock": "^9.0.0-beta.2",
 		"fetch-mock-jest": "^1.1.0-beta.3",
-		"html-webpack-plugin": "^3.2.0",
+		"html-webpack-plugin": "^5.5.0",
 		"jest": "^25.1.0",
 		"jest-cli": "^25.1.0",
 		"less": "^3.10.3",
-		"less-loader": "^5.0.0",
+		"less-loader": "^11.1.0",
 		"node-fetch": "^2.6.0",
 		"prettier": "^1.19.1",
 		"redux-mock-store": "^1.5.4",
 		"ts-jest": "^25.2.0",
-		"ts-loader": "^6.2.1",
+		"ts-loader": "^9.4.2",
 		"typescript": "^3.7.5",
-		"webpack": "^4.41.5",
-		"webpack-cli": "^3.3.10",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1",
 		"webpack-dev-server": "^3.9.0"
 	},
 	"scripts": {
